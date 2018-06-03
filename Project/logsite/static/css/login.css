@@ -1,0 +1,13 @@
+body {
+    background-image: url(/static/img/haitan.jpg);
+    background-clip: border-box;
+    background-size:100%,100%;
+    background-repeat: no-repeat;
+}
+.form-login label,h2{
+    color: white;
+}
+
+.form-register label,h2{
+    color: white;
+}

@@ -1,0 +1,23 @@
+{% extends 'login/base.html' %}
+{% block title %}注册验证{% endblock %}
+{% block content %}
+    <div class="row">
+        <h1 class="text-center">{{ message }}<span id="time"></span>秒后返回登录页...</h1>
+    </div>
+
+    <script>
+        var num=5;
+        function timeoutDesc() {
+            document.getElementById('time').innerText=num;
+            num--;
+            if (num<0){
+                return;
+            }
+            setTimeout('timeoutDesc()',1000);
+        }
+
+        timeoutDesc();
+        window.setTimeout("window.location='/login/'",1000*5);
+    </script>
+{% endblock %}
+
