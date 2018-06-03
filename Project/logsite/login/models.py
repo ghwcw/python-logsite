@@ -14,7 +14,7 @@ class User(models.Model):
     email = models.EmailField(max_length=128, unique=True)
     sex = models.CharField(max_length=16, choices=gender, default='男')
     c_time = models.DateTimeField(auto_now_add=True)  # 创建时的时间
-    has_confirm=models.BooleanField(default=False)
+    has_confirm = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
@@ -27,8 +27,8 @@ class User(models.Model):
 
 # 邮箱验证码
 class ConfirmString(models.Model):
-    code=models.CharField(max_length=256)
-    user=models.OneToOneField(to=User,on_delete=models.CASCADE)   # 一对一
+    code = models.CharField(max_length=256)
+    user = models.OneToOneField(to=User, on_delete=models.CASCADE)  # 一对一
     c_time = models.DateTimeField(auto_now_add=True)  # 创建时的时间
 
     def __str__(self):
@@ -38,4 +38,3 @@ class ConfirmString(models.Model):
         ordering = ["-c_time"]
         verbose_name = "确认码"
         verbose_name_plural = "确认码"
-
